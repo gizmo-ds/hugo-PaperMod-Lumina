@@ -1,0 +1,21 @@
+<blockquote class="post-copyright">
+  {{ with (partial "author.html" .) }}
+  <p class="copyright-item">
+    <span class="copyright-item-text"> Author: </span>
+    {{ . }}
+  </p>
+  {{ end }}
+  {{ $url := urls.Parse $.Permalink }} {{ $decodedPath := $url.Path }} {{
+  $baseURLWithLangFix := (strings.TrimSuffix "/" (print `/` | absLangURL)) }} {{
+  $decodedPermalink := (printf `%s%s` $baseURLWithLangFix $decodedPath) }}
+  <p class="copyright-item">
+    <span class="copyright-item-text">Link:</span>
+    <a href="{{ $.RelPermalink }}" target="_blank" rel="noopener noreferrer">
+      {{ $decodedPermalink }}
+    </a>
+  </p>
+  <p class="copyright-item">
+    <span class="copyright-item-text">License:</span>
+    {{ .Site.Copyright | markdownify }}
+  </p>
+</blockquote>

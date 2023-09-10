@@ -1,0 +1,14 @@
+{{ with .Site.Data.links }}
+<div class="links">
+  {{- range shuffle . -}}
+    <div class="links-item">
+      {{ $rel := "noopener noreferrer" }}
+      {{ if or (eq .check "bad-link") (eq .check "broken") }}{{ $rel = print $rel " nofollow" }}{{ end }}
+      <a href="{{ .url }}" target="_blank" rel="{{ $rel }}" check="{{ .check }}" title="{{ .name }}">{{ .name }}</a>
+      {{ if .description }}
+        <span class="links-item-description">{{ .description }}</span>
+      {{ end }}
+    </div>
+  {{- end -}}
+</div>
+{{ end }}

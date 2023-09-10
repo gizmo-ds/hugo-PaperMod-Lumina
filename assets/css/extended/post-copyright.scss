@@ -1,0 +1,32 @@
+blockquote {
+  &.post-copyright {
+    border-inline-start: 3px solid rgba(42, 109, 244, 0.5);
+    background-color: rgba(242, 242, 242, 0.5);
+    padding: 1em 1.5em;
+
+    a {
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    .copyright-item {
+      margin-bottom: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      .copyright-item-text {
+        font-weight: 500;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.dark blockquote {
+  &.post-copyright {
+    border-inline-start: 3px solid rgba(95, 177, 221, 0.5);
+    background-color: rgba(40, 42, 51, 0.5);
+  }
+}

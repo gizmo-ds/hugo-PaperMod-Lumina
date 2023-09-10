@@ -1,0 +1,23 @@
+{{- with .Site.Author }}
+<blockquote>
+  <p>
+    Email
+    <a href="mailto:{{- .email }}">
+      {{- .email }}
+    </a>
+    {{- if .discord }}
+      · Discord
+      <code>{{- .discord }}</code>
+    {{- end }}
+    {{- if .vrchat }}
+      · VRChat
+      <a href="{{- .vrchat.url }}" target="_blank" rel="noopener noreferrer nofollow">
+        {{ .vrchat.name }}
+      </a>
+    {{- end }}
+  </p>
+  
+</blockquote>
+{{- end }}
+
+{{- partial "social_icons.html" site.Params.socialIcons -}}

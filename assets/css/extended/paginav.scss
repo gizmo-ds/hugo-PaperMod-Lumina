@@ -1,0 +1,12 @@
+.paginav {
+  a:hover {
+    &.prev {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.next {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

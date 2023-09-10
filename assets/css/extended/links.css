@@ -1,0 +1,45 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--content-gap);
+}
+.links .links-item {
+  width: 50%;
+  line-height: 2;
+}
+.links .links-item .links-item-description {
+  color: var(--links-item-color);
+  background-color: var(--links-item-bg-color);
+  padding: 4px;
+  margin-left: 5px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+.links .links-item a {
+  border-bottom: 1px var(--primary) dashed;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.links .links-item a:before {
+  content: '⭐';
+}
+.links .links-item a[check*='in-home']:before {
+  content: '🎉';
+}
+.links .links-item a[check*='bad-link']:before {
+  content: '💔';
+}
+.links .links-item a[check*='broken']:before {
+  content: '🚧';
+}
+
+:root {
+  --links-item-color: hsl(0, 0%, 95%);
+  --links-item-bg-color: hsl(240, 4%, 20%);
+}
+
+.dark {
+  --links-item-color: hsl(230, 12%, 18%);
+  --links-item-bg-color: hsl(69, 9%, 84%);
+}

@@ -1,0 +1,5 @@
+{{ $src := .Destination }}
+{{ if and (strings.HasPrefix $src "/") site.Params.imageCDN }}
+  {{ $src = delimit (slice site.Params.imageCDN $src) "" }}
+{{ end }}
+<img loading="lazy" src="{{ $src | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />

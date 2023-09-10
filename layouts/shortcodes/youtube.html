@@ -1,0 +1,12 @@
+{{- $id := .Get "id" }} {{- if not .IsNamedParams }} {{- $id = .Get 0 }} {{- end
+}} {{- $invidious := .Site.Params.invidious }}
+
+<div class="youtube-embed">
+  {{- if $invidious }}
+  <iframe src="{{$invidious}}/embed/{{- $id }}" frameborder="0"></iframe>
+  {{- else }}
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{- $id }}"
+    frameborder="0"></iframe>
+  {{- end }}
+</div>
