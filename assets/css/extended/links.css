@@ -15,6 +15,11 @@
   font-size: 11px;
   border-radius: 3px;
 }
+@media screen and (max-width: 768px) {
+  .links-item-description {
+    display: none;
+  }
+}
 .links .links-item a {
   border-bottom: 1px var(--primary) dashed;
   box-shadow: none;
@@ -22,16 +27,16 @@
   text-decoration: none;
 }
 .links .links-item a:before {
-  content: '⭐';
+  content: "⭐";
 }
-.links .links-item a[check*='in-home']:before {
-  content: '🎉';
+.links .links-item a[check*="in-home"]:before {
+  content: "🎉";
 }
-.links .links-item a[check*='bad-link']:before {
-  content: '💔';
+.links .links-item a[check*="bad-link"]:before {
+  content: "💔";
 }
-.links .links-item a[check*='broken']:before {
-  content: '🚧';
+.links .links-item a[check*="broken"]:before {
+  content: "🚧";
 }
 
 :root {
