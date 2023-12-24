@@ -1,4 +1,6 @@
-{{ $data := .Get "data-type" }} {{ $hash := print "tw-" (md5 $data) }}
+{{ $data := .Get "data-type" }}
+{{ $data = or $data .Inner }}
+{{ $hash := print "tw-" (md5 $data) }}
 <p id="{{ $hash }}"></p>
 {{ with (resources.GetRemote "https://cdn.jsdelivr.net/npm/autotyping@1.2.6/dist/AutoTyping.min.js") | resources.Copy "assets/js/autotyping.min.js" }}
 <script src="{{ .RelPermalink }}"></script>{{ end }}
