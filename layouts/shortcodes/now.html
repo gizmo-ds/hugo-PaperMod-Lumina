@@ -1,1 +1,5 @@
-{{- time.Format (default "02 Jan 2006 15:04 MST" site.Params.DateFormat) now.UTC }}
+{{- $now := time.Now.UTC -}}
+<span id="now-{{- $now.Unix -}}">
+  {{- time.Format (default "02 Jan 2006 15:04 MST" site.Params.DateFormat) $now -}}
+</span>
+<script>document.getElementById("now-{{- $now.Unix -}}").innerText = new Date("{{$now}}").toLocaleString()</script>
