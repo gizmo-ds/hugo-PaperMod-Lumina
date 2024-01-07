@@ -1,0 +1,21 @@
+.post-content {
+  p code {
+    border-radius: 2px;
+  }
+  .highlight {
+    border-radius: var(--hljs-radius);
+
+    table {
+      border-radius: var(--hljs-radius);
+    }
+    > div:first-child {
+      border-radius: var(--hljs-radius);
+    }
+  }
+  code {
+    border-radius: inherit;
+  }
+  pre code {
+    border-radius: inherit;
+  }
+}
